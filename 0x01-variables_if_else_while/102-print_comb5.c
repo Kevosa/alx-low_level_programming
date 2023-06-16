@@ -11,7 +11,7 @@ int main(void)
 	
 	for (o = 0; o <= 99; o++)
 	{
-		for (p = o; p <= 99; p++)
+		for (p = o+1; p <= 99; p++)
 	{
 		putchar((o / 10) + '0');
 		putchar((o % 10) + '0');
@@ -26,5 +26,5 @@ int main(void)
 	}
 	}
 	putchar('\n');
-	return 0;
+	return (0);
 }
