@@ -15,7 +15,6 @@ int main(void)
 		{
 			for (m = l + 1; m <= 9; m++)
 			{
-				count++;
 				putchar(k + '0');
 				putchar(l + '0');
 				putchar(m + '0');
