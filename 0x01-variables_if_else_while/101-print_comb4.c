@@ -8,12 +8,14 @@
 int main(void)
 {
 	int k, l, m;
+	
 	for (k = 0; l <= 7; k++)
 	{
 		for (l = k + 1; l <= 8; l++)
 		{
 			for (m = l + 1; m <= 9; m++)
 			{
+				count++;
 				putchar(k + '0');
 				putchar(l + '0');
 				putchar(m + '0');
