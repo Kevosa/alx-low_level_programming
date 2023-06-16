@@ -15,7 +15,6 @@ int main(void)
 		{
 			putchar(k + '0');
 			putchar(l + '0');
-			
 			if (k != 8 || l != 9)
 			{
 				putchar(',');
@@ -23,8 +22,7 @@ int main(void)
 	}
 	}
 	}
-	
 	putchar('\n');
-	return 0;
+	return (0);
 }
 
