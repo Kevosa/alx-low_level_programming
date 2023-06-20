@@ -5,10 +5,10 @@ int main(void)
 	int fib1 = 1;
 	int fib2 = 2;
 	int fib;
+	int i;
     
     printf("%d, %d", fib1, fib2);
     
-    int i;
 	for (i = 3; i <= 50; i++)
     {
 	fib = fib1 + fib2;
