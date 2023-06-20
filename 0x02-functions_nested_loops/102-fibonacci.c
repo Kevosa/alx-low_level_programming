@@ -9,6 +9,7 @@ int main(void)
 {
 	int fib1 = 1;
 	int fib2 = 2;
+	int fib;
 
 	printf("%d, %d", fib1, fib2);
 
