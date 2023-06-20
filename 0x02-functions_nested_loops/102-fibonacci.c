@@ -2,17 +2,17 @@
 
 int main(void)
 {
-	unsigned long long fib1 = 1;
-	unsigned long long fib2 = 2;
-	unsigned long long fib;
+	int fib1 = 1;
+	int fib2 = 2;
+	int fib;
 	int i;
     
-    printf("%llu, %llu", fib1, fib2);
+    printf("%d, %d", fib1, fib2);
     
 	for (i = 3; i <= 50; i++)
     {
 	fib = fib1 + fib2;
-	printf(", %llu", fib);
+	printf(", %d", fib);
 	fib1 = fib2;
 	fib2 = fib;
 	}
