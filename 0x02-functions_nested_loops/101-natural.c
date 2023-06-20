@@ -21,6 +21,6 @@ int main(void)
 		}
 		i++;
 	}
-	printf("The sum of multiples of 3 or 5 below %d is: %d\n", z);
+	printf("The sum of multiples of 3 or 5 below 1024 is: %d\n", z);
 	return 0;
 }
