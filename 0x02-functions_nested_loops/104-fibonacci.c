@@ -4,7 +4,7 @@ int main() {
     unsigned int fib1 = 1;
     unsigned int fib2 = 2;
     unsigned int fib_next = 0;
-    int count = 2; // Number of Fibonacci numbers generated, starting with 1 and 2
+    int count = 2; 
 
     printf("%u, %u", fib1, fib2);
 
