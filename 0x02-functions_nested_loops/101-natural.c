@@ -10,18 +10,17 @@
  */
 int main(void)
 {
-	int limit = 1024;
-	int sum = 0;
-	int i;
+	int i, z = 0;
 
 
-	for (int i = 1; i < limit; i++)
+	while (i < 1024)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			sum += i;
+			z += i;
 		}
+		i++;
 	}
-	printf("The sum of multiples of 3 or 5 below %d is: %d\n", limit, sum);
+	printf("The sum of multiples of 3 or 5 below %d is: %d\n", z);
 	return 0;
 }
