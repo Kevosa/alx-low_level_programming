@@ -7,12 +7,12 @@ int main(void)
 	unsigned long long fib;
 	int i;
     
-    printf("%d, %d", fib1, fib2);
+    printf("%llu, %llu", fib1, fib2);
     
 	for (i = 3; i <= 50; i++)
     {
 	fib = fib1 + fib2;
-	printf(", %d", fib);
+	printf(", %llu", fib);
 	fib1 = fib2;
 	fib2 = fib;
 	}
