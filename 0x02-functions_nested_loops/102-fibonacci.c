@@ -2,9 +2,9 @@
 
 int main(void)
 {
-	int fib1 = 1;
-	int fib2 = 2;
-	int fib;
+	unsigned long long fib1 = 1;
+	unsigned long long fib2 = 2;
+	unsigned long long fib;
 	int i;
     
     printf("%d, %d", fib1, fib2);
