@@ -7,7 +7,7 @@
 void print_alphabet(void)
 {
 	char letter;
-	if (letter = a ;letter <= z ;letter++)
+	if (letter = 'a' ;letter <= 'z' ;letter++)
 	{
 		_putchar(letter);
 	}
