@@ -7,5 +7,5 @@
  */
 int mul(int a, int b)
 {
-	int a * int b
+	int mult = int a * int b;
 }
