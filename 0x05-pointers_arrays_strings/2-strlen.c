@@ -14,7 +14,7 @@ int _strlen(char *s)
 		s++;
 	}
 
-	return (longi);
+	return (k);
 }
 
 
