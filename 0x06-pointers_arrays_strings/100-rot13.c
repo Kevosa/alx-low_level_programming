@@ -15,6 +15,13 @@ char *rot13(char *str)
 
     while (*ptr)
     {
+        int is_uppercase = 0;
+        if (*ptr >= 'A' && *ptr <= 'Z')
+        {
+            is_uppercase = 1;
+            *ptr = *ptr - 'A' + 'a';
+        }
+
         for (i = 0; input[i]; i++)
         {
             if (*ptr == input[i])
@@ -23,10 +30,13 @@ char *rot13(char *str)
                 break;
             }
         }
-        if (input[i])
-            ptr++;
-        else
-            break;
+
+        if (*ptr >= 'a' && *ptr <= 'z' && is_uppercase)
+        {
+            *ptr = *ptr - 'a' + 'A';
+        }
+
+        ptr++;
     }
 
     return str;
