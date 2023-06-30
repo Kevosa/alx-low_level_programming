@@ -1,30 +1,27 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	int o, p;
-	
-	for (o = 0; o <= 99; o++)
-	{
-		for (p = o+1; p <= 99; p++)
-	{
-		putchar((o / 10) + '0');
-		putchar((o % 10) + '0');
-		putchar(' ');
-		putchar((p / 10) + '0');
-		putchar((p % 10) + '0');
-		if (o != 99 || p != 99)
-		{
-			putchar(',');
-			putchar(' ');
-		}
-	}
-	}
-	putchar('\n');
-	return (0);
+void print_combinations() {
+    int i, j;
+    
+    for (i = 0; i <= 99; i++) {
+        for (j = i + 1; j <= 99; j++) {
+            putchar(i / 10 + '0');
+            putchar(i % 10 + '0');
+            putchar(' ');
+            putchar(j / 10 + '0');
+            putchar(j % 10 + '0');
+            
+            if (i < 98 || j < 99) {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+    }
 }
+
+int main() {
+    print_combinations();
+    
+    return 0;
+}
+
