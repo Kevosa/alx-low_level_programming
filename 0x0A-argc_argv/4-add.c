@@ -12,11 +12,10 @@ int main(int argc, char *argv[])
 {
 	int x, sum = 0;
 
-	if (argc < 1)
-		printf("0\n");
+
 	for (x = 1; x < argc; x++)
 	{
-		if (argv[x] < '0' || argv[x] > '9')
+		if (argv[x][0] < '0' || argv[x][0] > '9')
 		{
 			printf("Error\n");
 			return (1);

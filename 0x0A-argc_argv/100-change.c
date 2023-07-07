@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("%s\n", c);
 		return (1);
 	}
-	dev = atoi(argv[1]);
+	d = atoi(argv[1]);
 	while (d >= 25)
 	{
 		d -= 25;
