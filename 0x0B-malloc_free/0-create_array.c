@@ -1,31 +1,26 @@
 
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * main - prints the sum of positive numbers
- * @argc: Argument count
- * @argv: Argument vector
- *
- * Return: 0, 1 if not a number
+ * create_array - the arrays of characters and
+ * initiate the character.
+ * @size: size of the array.
+ * @c: int value to initiate.
+ * Return: a pointer
  */
 
-int main(int argc, char *argv[])
+char *create_array(unsigned int size, char c)
 {
-	int x, sum = 0;
+	char *array;
+	unsigned int i;
 
-	if (argc < 1)
-		printf("0\n");
-	for (x = 1; x < argc; x++)
-	{
-		if (argv[x] < '0' || argv[x] > '9')
-		{
-			printf("Error\n");
-			return (1);
-		}
-
-		sum += atoi(argv[x]);
-	}
-
-	printf("%d\n", sum);
-	return (0);
+	if (size == 0)
+		return (NULL);
+	array = (char *)malloc(sizeof(char) * size);
+	if (array == NULL)
+		return (NULL);
+	for (i = 0; i < size; i++)
+		array[i] = c;
+	return (array);
 }
