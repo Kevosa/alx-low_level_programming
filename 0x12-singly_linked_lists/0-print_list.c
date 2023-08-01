@@ -7,7 +7,7 @@
  * Return: number of elements
  */
 
-size_t print_list(const list_t *h);
+size_t print_list(const list_t *h)
 {
 	int count = 0;
 	const list_t *current = h;
