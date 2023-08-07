@@ -1,5 +1,11 @@
 #include "main.h"
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
+#define BUFF_SIZE 1024
+#define FILE_PERMISSIONS 0664
 /**
  * main - Copies the content of a file to another file.
  * @argc: Argument count
