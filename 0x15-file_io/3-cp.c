@@ -1,52 +1,41 @@
-#include "main.h"
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#define BUFF_SIZE 1024
-#define FILE_PERMISSIONS 0664
+#i`nclude "main.h"
 /**
- * main - Copies the content of a file to another file.
- * @argc: Argument count
- * @argv: Arguments
+ * main - copies the content of a file to another file.
+ * @argc: argument counter
+ * @argv: arguments:
  *
- * Return: 0 on success, exit codes on failure
+ * Return: 0
  */
 int main(int argc, char **argv)
 {
-	int src_fd, dest_fd;
-	ssize_t bytes_read, bytes_written;
-	char buffer[BUFF_SIZE];
+	ssize_t fd = 0, ft = 0, rd = 0, wr = 0;
+	char buff[BUFF_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
-	src_fd = open(argv[1], O_RDONLY);
-	dest_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, FILE_PERMISSIONS);
-
-	if (src_fd == -1 || dest_fd == -1)
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
 	{
-		perror("Error");
-		exit(98 + src_fd - dest_fd);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
-
-	while ((bytes_read = read(src_fd, buffer, BUFF_SIZE)))
+	ft = open(argv[2], O_WRONLY |  O_CREAT | O_TRUNC, 0664);
+	if (ft == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	while ((rd = read(fd, buff, BUFF_SIZE)))
 	{
-		if (bytes_read == -1)
-			perror("Error"), exit(98);
-
-		bytes_written = write(dest_fd, buffer, bytes_read);
-
-		if (bytes_written == -1)
-			perror("Error"), exit(99);
+		if (rd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		wr = write(ft, buff, rd);
+		if (wr == -1)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
-
-	if (close(src_fd) == -1 || close(dest_fd) == -1)
-	{
-		perror("Error");
-		exit(100);
-	}
-
+	if ((close(fd) == -1))
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", fd), exit(100);
+	if ((close(ft) == -1))
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", ft), exit(100);
 	return (0);
 }
-
