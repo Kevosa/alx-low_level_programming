@@ -1,26 +1,22 @@
 #include "lists.h"
 
 /**
- * free_dlistint - adds a node to the end of a doubly linked list
+ * free_dlistint - frees a dlistint_t list
  *
- * @head: head of a dlistint_t list.
- * @n: number to add to the node
- *
- * Return: number of elements
+ * @head: head of the list
+ * Return: no return
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *next = NULL, *curr = NULL;
+	dlistint_t *tmp;
 
-	/* check the existance of the head node */
-	if (head)
+	if (head != NULL)
+		while (head->prev != NULL)
+			head = head->prev;
+
+	while ((tmp = head) != NULL)
 	{
-		curr = head;
-		while (curr)
-		{
-			next = curr->next;
-			free(curr);
-			curr = next;
-		}
+		head = head->next;
+		free(tmp);
 	}
 }
